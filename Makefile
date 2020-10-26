@@ -16,9 +16,11 @@ ifeq '$(OS_NAME)' 'linux'
 		sudo apt update
 		sudo apt install -y wget git vim tmux sl apt-transport-https ca-certificates curl software-properties-common fzf
 		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable"
+		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$(UBUNTU_CODENAME)") stable"
+		curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+		echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 		sudo apt update
-		sudo apt install -y docker-ce docker-compose
+		sudo apt install -y docker-ce docker-compose brave-browser
 		sudo usermod -aG docker $(USER)
 		curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
 		source ~/.bashrc
@@ -31,6 +33,7 @@ else
 		brew install wget git vim tmux nvm sl fzf
 		wget -O ~/Downloads/Docker.dmg https://desktop.docker.com/mac/stable/Docker.dmg
 		echo "Docker was downloaded on ~/Downloads folder, install it!"
+		wget -O ~/Downloads/Brave.dmg https://laptop-updates.brave.com/latest/osx
 		mv .bashrc .bash_profile
 		source ~/.bash_profile
 
