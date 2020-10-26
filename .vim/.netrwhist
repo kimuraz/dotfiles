@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/kimura/Projects/farm_mngt_api/hr'
+let g:netrw_dirhist_9='/home/kimura/Projects/farm_mngt_api'
+let g:netrw_dirhist_8='/home/kimura/Projects/farm_mngt_api/farms'
+let g:netrw_dirhist_7='/home/kimura/Projects/farm_mngt_api'
+let g:netrw_dirhist_6='/home/kimura/Projects/farm_mngt_api/farm_mngt_api'
+let g:netrw_dirhist_5='/home/kimura/Projects/farm_mngt_api'
+let g:netrw_dirhist_4='/home/kimura/Projects/farm_mngt_api/hr'
+let g:netrw_dirhist_3='/home/kimura/Projects/farm_mngt_api'
+let g:netrw_dirhist_2='/home/kimura/Projects/farm_mngt_api/finances'
+let g:netrw_dirhist_1='/home/kimura/Projects/farm_mngt_api'

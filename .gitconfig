@@ -1,0 +1,14 @@
+[user]
+	name = Jose Eduardo Kimura Reis
+	email = j.eduardokimura@icloud.com
+[core]
+	editor = vim
+[alias]
+  pushu = push --set-upstream
+	co = checkout
+	st = status
+	ft = fetch -p
+	cm = commit -m
+  cam = commit --amend
+	rb = rebase -i
+	br = branch
