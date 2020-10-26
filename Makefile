@@ -14,7 +14,7 @@ ifeq '$(OS_NAME)' 'linux'
 		echo "Updating packages and installing dependencies"
 
 		sudo apt update
-		sudo apt install -y wget git vim tmux sl apt-transport-https ca-certificates curl software-properties-common
+		sudo apt install -y wget git vim tmux sl apt-transport-https ca-certificates curl software-properties-common fzf
 		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$UBUNTU_CODENAME") stable"
 		sudo apt update
@@ -28,7 +28,7 @@ else
 		echo "Installing homebrew and other dependencies"
 
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-		brew install wget git vim tmux nvm sl
+		brew install wget git vim tmux nvm sl fzf
 		wget -O ~/Downloads/Docker.dmg https://desktop.docker.com/mac/stable/Docker.dmg
 		echo "Docker was downloaded on ~/Downloads folder, install it!"
 		mv .bashrc .bash_profile
