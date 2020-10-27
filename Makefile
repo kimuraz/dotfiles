@@ -5,7 +5,11 @@ install:
 	# Only supports Linux (deb based with apt) and MacOS
 	# Copying dotfiles
 	echo "Copying all dot files"
-	cp -rf ./.[a-z]* ~/.
+	cp -r .vim ~/.
+	cp .vimrc ~/.
+	cp .tmux.conf ~/.
+	cp .bashrc ~/.
+	cp .gitconfig ~/.
 
 	# Reloading bash file
 	echo "Reload bash file"
@@ -16,7 +20,7 @@ ifeq '$(OS_NAME)' 'linux'
 		sudo apt update
 		sudo apt install -y wget git vim tmux sl apt-transport-https ca-certificates curl software-properties-common fzf
 		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(. /etc/os-release; echo "$(UBUNTU_CODENAME)") stable"
+		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 		curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 		echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 		sudo apt update
