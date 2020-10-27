@@ -4,7 +4,9 @@ OS_NAME := $(shell uname -s | tr A-Z a-z)
 install:
 	# Only supports Linux (deb based with apt) and MacOS
 	# Copying dotfiles
+
 	echo "Copying all dot files"
+
 	cp -r .vim ~/.
 	cp .vimrc ~/.
 	cp .tmux.conf ~/.
@@ -13,6 +15,7 @@ install:
 
 	# Reloading bash file
 	echo "Reload bash file"
+
 ifeq '$(OS_NAME)' 'linux'
 
 		echo "Updating packages and installing dependencies"
@@ -38,7 +41,7 @@ else
 		wget -O ~/Downloads/Docker.dmg https://desktop.docker.com/mac/stable/Docker.dmg
 		echo "Docker was downloaded on ~/Downloads folder, install it!"
 		wget -O ~/Downloads/Brave.dmg https://laptop-updates.brave.com/latest/osx
-		mv .bashrc .bash_profile
+		mv ~/.bashrc ~/.bash_profile
 		source ~/.bash_profile
 
 endif

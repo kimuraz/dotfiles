@@ -61,7 +61,7 @@ parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;34m\]\w\[\033[00m\] $(parse_git_branch)\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] $(parse_git_branch) \$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -95,7 +95,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias dc='docker-compose'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -124,3 +123,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# my aliases
+alias dc='docker-compose'
